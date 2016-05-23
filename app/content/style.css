@@ -1,0 +1,8 @@
+.page-header {
+    color: darkorange;
+    text-align: center;
+}
+
+.raw-phone, .filtered-phone {
+    padding-left: 35%;
+}

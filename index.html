@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="egenPhoneFilter">
+<head>
+    <meta charset="UTF-8">
+
+    <!--inject: vendor css-->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!--inject: css-->
+    <link rel="stylesheet" href="app/content/style.css" />
+
+    <title>Egen Angular Phone Filter</title>
+</head>
+<body>
+<div class="page-header">
+    <img src="app/content/image/egen-phone-logo.jpg" alt="logo" class="img-circle" />
+    <h1>Egen Angular Phone Filter</h1>
+</div>
+<form class="form-horizontal">
+    <div class="form-group">
+        <label for="rawPhone" class="col-xs-6 raw-phone">Enter a telephone number</label>
+        <span class="col-xs-2">
+            <input id="rawPhone"
+                   class="form-control"
+                   ng-model="phoneNumber"
+                   ng-bind="phoneNumber | phoneFilter"
+                   placeholder="Raw Phone Number"
+                   maxlength="13" />
+        </span>
+    </div>
+    <div class="form-group">
+        <label class="col-xs-6 filtered-phone">Filtered phone number</label>
+        <span class="col-xs-2">
+            <label class="form-control">{{ phoneNumber | phoneFilter }}</label>
+        </span>
+    </div>
+</form>
+
+<!--scripts-->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-mocks/angular-mocks.js"></script>
+<script src="app/filter/egen-phone.filter.js"></script>
+</body>
+</html>
